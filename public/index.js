@@ -13,7 +13,7 @@ const chooseHeader = document.querySelector("#choose-header");
 const yourDuoHeader = document.querySelector("#your-duo-header");
 const compDuoHeader = document.querySelector("#comp-duo-header");
 
-baseUrl = 'http://localhost:3000'
+const baseUrl = 'http://localhost:3000'
 
 let choices = [];
 let compDuo = [];
