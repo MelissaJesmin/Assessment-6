@@ -13,7 +13,7 @@ const chooseHeader = document.querySelector("#choose-header");
 const yourDuoHeader = document.querySelector("#your-duo-header");
 const compDuoHeader = document.querySelector("#comp-duo-header");
 
-const baseUrl = 'http://localhost:3000'
+
 
 let choices = [];
 let compDuo = [];
@@ -120,7 +120,7 @@ const putBotBack = (id) => {
 };
 
 const drawFive = () => {
-  axios.get(`${baseUrl}/api/robots/shuffled`).then((res) => {
+  axios.get('/api/robots/shuffled').then((res) => {
     const shuffledBots = res.data;
     choices = shuffledBots.slice(0, 5);
     compDuo = shuffledBots.slice(6, 8);
@@ -163,14 +163,14 @@ const reset = () => {
 };
 
 const getPlayerStats = () => {
-  axios.get(`${baseUrl}/api/player`).then(({ data: { wins, losses } }) => {
+  axios.get('/api/player').then(({ data: { wins, losses } }) => {
     winsText.textContent = `Wins: ${wins}`;
     lossesTest.textContent = `Losses: ${losses}`;
   });
 };
 
 const getAllBots = () => {
-  axios.get(`${baseUrl}/api/robots`).then(({ data }) => {
+  axios.get('/api/robots').then(({ data }) => {
     allBotsDiv.innerHTML = "";
 
     data.forEach((bot) => {
